@@ -17,21 +17,26 @@ findMax ( fst : restOfList ) =
         findMax restOfList
 
 
-findMaxGuarded :: [Int] -> Int
-findMaxGuarded [] = 0
-findMaxGuarded [n] = n
-findMaxGuarded ( fst : restOfList )
-    | fst >= findMaxGuarded restOfList  = fst
-    -- otherwise always evaluates to True
-    |  otherwise                        = findMaxGuarded restOfList
-
-
-findMaxOptimized :: [Int] -> Int
-findMaxOptimized [] = 0
-findMaxOptimized ( fst : restOfList ) =
+findMaxWithPartialResult :: [Int] -> Int
+findMaxWithPartialResult [] = 0
+findMaxWithPartialResult [n] = n
+findMaxWithPartialResult ( fst : restOfList ) =
     if fst >= restMax
         then fst
     else
         restMax
     where
+        restMax = findMaxWithPartialResult restOfList 
+
+
+findMaxOptimized :: [Int] -> Int
+findMaxOptimized [] = 0
+findMaxOptimized [n] = n
+findMaxOptimized ( fst : restOfList ) =
+    let
         !restMax = findMaxOptimized restOfList
+    in
+        if fst >= restMax
+            then fst
+        else
+            restMax
