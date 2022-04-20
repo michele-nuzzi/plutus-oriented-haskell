@@ -40,3 +40,4 @@ findMaxOptimized ( fst : restOfList ) =
             then fst
         else
             restMax
+            
