@@ -30,6 +30,7 @@ instance Num Complex where
     (*) (Im i1) (Im i2) = Re $ - (i1 * i2)
     (*) (Im i1) (Complex 0 i2) = Re $ - (i1 * i2)
     (*) (Complex 0 i1) (Im i2) = Re $ - (i1 * i2)
+    (*) (Complex 0 i1) (Complex 0 i2) = Re $ - (i1 * i2)
     (*) c1 c2 =
             Re (real c1 * real c2)                 +
             Im (real c1 * imaginary c2)            +

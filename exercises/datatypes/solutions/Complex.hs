@@ -30,10 +30,13 @@ instance Show Complex where
     show (Complex r i ) = show r    ++ "+"      ++ show i ++ "i"
 -}
 
-instance (Num n, Show n) => Num (Complex n) where
+instance (Num n, Show n, Eq n) => Num (Complex n) where
     (+) c1 c2 = Complex (real c1 + real c2) (imaginary c1 + imaginary c2)
 
     (*) (Im i1) (Im i2) = Re $ - (i1 * i2)
+    (*) (Im i1) (Complex 0 i2) = Re $ - (i1 * i2)
+    (*) (Complex 0 i1) (Im i2) = Re $ - (i1 * i2)
+    (*) (Complex 0 i1) (Complex 0 i2) = Re $ - (i1 * i2)
     (*) c1 c2 =
             Re (real c1 * real c2)                 +
             Im (real c1 * imaginary c2)            +
