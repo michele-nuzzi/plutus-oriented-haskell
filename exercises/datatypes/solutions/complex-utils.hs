@@ -1,4 +1,5 @@
 
+
 data Complex = Re Double | Im Double | Complex Double Double 
 
 real :: Complex -> Double

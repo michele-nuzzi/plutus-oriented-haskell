@@ -1,3 +1,5 @@
+
+
 data Complex = Re Double | Im Double | Complex Double Double 
 
 -- extract the real part

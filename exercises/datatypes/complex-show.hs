@@ -18,6 +18,8 @@ complexFromTuple ( r, i ) = Complex r i
 
 
 -- make the ```Complex``` datatype an instance of the ```Show``` typeclass
+-- show (Complex 2 1 ) -> "2+1i"
+-- a+bi
 
 -- instance ... where
     -- show complex = ...

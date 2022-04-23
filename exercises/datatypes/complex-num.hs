@@ -26,10 +26,15 @@ complexFromTuple ( r, i ) = Complex r i
 -- make the ```Complex``` datatype an instance of the ```Num``` typeclass
 
 instance Num Complex where
+
+    -- (a+bi) + (c+di) = ( (a+c) + (b+d)i )
     (+) c1 c2 = undefined
 
+    -- (a+bi) * (c+di) = a*c + a*di + bi*c + bi*di
+    -- i * i = i^2 = -1
     (*) c1 c2 = undefined
 
+    -- -(a+bi) = (-a-bi)
     negate c  = undefined 
 
     fromInteger int = Re $ fromIntegral int

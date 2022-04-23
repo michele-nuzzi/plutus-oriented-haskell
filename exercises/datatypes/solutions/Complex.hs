@@ -35,7 +35,7 @@ instance (Num n, Show n) => Num (Complex n) where
 
     (*) (Im i1) (Im i2) = Re $ - (i1 * i2)
     (*) c1 c2 =
-            Re (real c1 * real c2)                  +
+            Re (real c1 * real c2)                 +
             Im (real c1 * imaginary c2)            +
             Im (real c2 * imaginary c1)            +
             Im (imaginary c1) * Im (imaginary c2)
