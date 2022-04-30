@@ -11,4 +11,4 @@ addTwos list =
 
 addTwosPatternMatching :: [Int] -> [Int]
 addTwosPatternMatching [] = []
-addTwosPatternMatching ( listElem : restOfTheList ) = listElem + 2 : addTwos restOfTheList
+addTwosPatternMatching ( listElem : restOfTheList ) = listElem + 2 : addTwosPatternMatching restOfTheList
