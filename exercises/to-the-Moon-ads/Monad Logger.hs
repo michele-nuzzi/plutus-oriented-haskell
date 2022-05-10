@@ -46,10 +46,9 @@ instance Applicative (Logger a) where
 
 
 instance Monad (Logger a) where
-    return =  pure
+    return = pure
 
     -- same idea of the apply, the messages from loggerA should go to the end of the logs
     (>>=) loggerA funcToLoggerB = undefined
 
     (>>) loggerA loggerB = loggerA >>= const loggerB
-    
